@@ -1,0 +1,41 @@
+@startuml
+class Usuario {
+ id : UUID
+ rol : Rol
+ estado : EstadoUsuario
+}
+class Libro {
+ id : UUID
+ titulo : String
+ autor : String
+}
+class Ejemplar {
+ id : UUID
+ estado : EstadoEjemplar
+}
+class Reserva {
+ id : UUID
+ solicitudId : UUID
+ creadaEn : DateTime
+ venceEn : DateTime
+ estado : EstadoReserva
+}
+class Prestamo {
+ id : UUID
+ fechaSalida : DateTime
+ fechaLimite : DateTime
+ fechaRetorno : DateTime [0..1]
+ estado : EstadoPrestamo
+}
+Libro "1" -- "0..*" Ejemplar
+Usuario "1" -- "0..*" Reserva
+Ejemplar "1" -- "0..*" Reserva
+Usuario "1" -- "0..*" Prestamo
+Ejemplar "1" -- "0..*" Prestamo
+Reserva "0..1" -- "0..1" Prestamo : origina
+note bottom
+Máximo una Reserva ACTIVA y un Préstamo ACTIVO
+por ejemplar; nunca ambos a la vez.
+Solicitud única por usuario y solicitudId.
+end note
+@enduml

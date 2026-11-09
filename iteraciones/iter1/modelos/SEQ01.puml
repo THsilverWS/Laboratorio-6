@@ -1,0 +1,28 @@
+@startuml
+actor Estudiante
+boundary Pantalla
+control ServicioReserva
+database BD
+Estudiante -> Pantalla : reservar(ejemplarId, solicitudId)
+Pantalla -> ServicioReserva : reservar(usuarioId, ejemplarId, solicitudId)
+ServicioReserva -> BD : consultarSolicitudYValidar(usuarioId, solicitudId)
+BD --> ServicioReserva : resultado
+alt solicitud ya confirmada
+ ServicioReserva --> Pantalla : mismo código de reserva
+else usuario inválido o sin cupo
+ ServicioReserva --> Pantalla : rechazo por reglas
+else validación inicial correcta
+ ServicioReserva -> BD : transacción: bloquear usuario y ejemplar;\nrevalidar cupo, estado y solicitudId; crear reserva
+ alt commit correcto
+  BD --> ServicioReserva : reservaId, venceEn
+  ServicioReserva --> Pantalla : confirmación
+ else conflicto o cupo agotado
+  BD --> ServicioReserva : rollback por reglas
+  ServicioReserva --> Pantalla : conflicto sin reserva nueva
+ else fallo técnico
+  BD --> ServicioReserva : rollback
+  ServicioReserva --> Pantalla : error recuperable
+ end
+end
+Pantalla --> Estudiante : mostrar resultado
+@enduml

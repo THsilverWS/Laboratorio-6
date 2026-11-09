@@ -1,0 +1,14 @@
+@startuml
+[*] --> ACTIVA : crear [reglas válidas] / reservar ejemplar
+ACTIVA --> CANCELADA : cancelar [titular y ahora < venceEn]\n/ liberar ejemplar
+ACTIVA --> VENCIDA : vencer [ahora >= venceEn]\n/ liberar ejemplar
+ACTIVA --> ATENDIDA : entregar [bibliotecario y ahora < venceEn]\n/ crear préstamo y prestar ejemplar
+CANCELADA --> [*]
+VENCIDA --> [*]
+ATENDIDA --> [*]
+note bottom
+Todas las transiciones son atómicas y verifican ACTIVA.
+Un evento perdedor en una carrera no cambia el estado.
+Al vencer, cancelar o entregar se conserva la reserva histórica.
+end note
+@enduml

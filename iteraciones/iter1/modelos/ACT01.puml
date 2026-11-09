@@ -1,0 +1,22 @@
+@startuml
+start
+:Seleccionar ejemplar;
+:Validar usuario y cupo;
+if (Activo y total menor que 3?) then (sí)
+  :Bloquear usuario y ejemplar;
+  :Revalidar cupo y disponibilidad;
+  if (Cumple las reglas?) then (sí)
+    :Crear Reserva ACTIVA y cambiar\nEjemplar a RESERVADO en una transacción;
+    if (Commit correcto?) then (sí)
+      :Mostrar código y vencimiento;
+    else (no)
+      :Rollback y mostrar error técnico;
+    endif
+  else (no)
+    :Liberar bloqueo y mostrar conflicto;
+  endif
+else (no)
+  :Mostrar rechazo por estado o cupo;
+endif
+stop
+@enduml

@@ -1,0 +1,72 @@
+[
+  [
+    "OBJ02",
+    "RF01",
+    "CU01",
+    "Contrato CU01",
+    "CP01"
+  ],
+  [
+    "OBJ02",
+    "RF02",
+    "CU02",
+    "CLA01",
+    "CP02"
+  ],
+  [
+    "OBJ01 y OBJ02",
+    "RF03",
+    "CU03",
+    "ACT01, SEQ01, CLA01, EST01",
+    "CP03 a CP05, CP09"
+  ],
+  [
+    "OBJ01",
+    "RF04",
+    "CU04",
+    "CLA01, EST01",
+    "CP06, CP10"
+  ],
+  [
+    "OBJ01",
+    "RF05",
+    "CU05",
+    "CLA01; contrato CU05",
+    "CP07"
+  ],
+  [
+    "OBJ01",
+    "RF06",
+    "CU06",
+    "CLA01, EST01",
+    "CP08, CP10"
+  ],
+  [
+    "OBJ03",
+    "RNF01",
+    "CU01 a CU06",
+    "Contratos y controles de rol",
+    "CP01, CP06 a CP08"
+  ],
+  [
+    "OBJ02",
+    "RNF02",
+    "CU02 y CU03",
+    "SEQ01 y escenario de carga",
+    "CP02, CP03 con carga"
+  ],
+  [
+    "OBJ01",
+    "RNF03",
+    "CU03 a CU06",
+    "ACT01, SEQ01, CLA01, EST01",
+    "CP04, CP07 a CP10"
+  ],
+  [
+    "OBJ03",
+    "RNF04",
+    "CU03 a CU06",
+    "Registro de auditoría de SRS",
+    "CP03, CP06 a CP08"
+  ]
+]

@@ -1,0 +1,77 @@
+{
+  "tipo": "revision interna documental",
+  "checklist": [
+    [
+      "Alcance",
+      "Las seis funciones pertenecen a la Visión y excluyen pagos.",
+      "Conforme"
+    ],
+    [
+      "Nombres",
+      "Libro, Ejemplar, Reserva y Prestamo mantienen el mismo significado.",
+      "Conforme"
+    ],
+    [
+      "Relaciones",
+      "Cada reserva y préstamo identifica usuario y ejemplar.",
+      "Conforme"
+    ],
+    [
+      "Excepciones",
+      "Rechazo, conflicto, rollback y reintento tienen respuesta definida.",
+      "Conforme"
+    ],
+    [
+      "Estados",
+      "Guardas de entrega, cancelación y vencimiento son excluyentes.",
+      "Conforme"
+    ],
+    [
+      "Trazabilidad",
+      "6 RF y 4 RNF se enlazan con CU y escenarios.",
+      "Conforme"
+    ],
+    [
+      "Riesgos",
+      "K01 a K06 tienen fase, responsable y acción.",
+      "Conforme"
+    ],
+    [
+      "Revisión por pares",
+      "Identidad, fecha y aprobación de otra persona.",
+      "Pendiente externo"
+    ]
+  ],
+  "hallazgos": [
+    [
+      "H01",
+      "Reservar Libro no identifica la copia asignada.",
+      "RF03 y CLA01 reservan Ejemplar, con vínculo a Libro.",
+      "Cerrado en diseño"
+    ],
+    [
+      "H02",
+      "Cancelar sin comprobar el estado puede liberar una copia prestada.",
+      "CU06 y EST01 solo cambian desde ACTIVA mediante transición atómica.",
+      "Cerrado en diseño"
+    ],
+    [
+      "H03",
+      "Validar el cupo solo antes de la transacción permite superar 3.",
+      "CU03 bloquea usuario y revalida cupo antes de crear.",
+      "Cerrado en diseño"
+    ],
+    [
+      "H04",
+      "Un reintento tras respuesta perdida puede crear otra reserva.",
+      "RN05 y SEQ01 usan solicitudId único y recuperan el resultado.",
+      "Cerrado en diseño"
+    ],
+    [
+      "H05",
+      "El límite del plazo puede permitir dos eventos incompatibles.",
+      "RN02 fija < para entrega y ≥ para vencimiento.",
+      "Cerrado en diseño"
+    ]
+  ]
+}

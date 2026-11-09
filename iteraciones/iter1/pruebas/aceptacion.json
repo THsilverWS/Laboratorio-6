@@ -1,0 +1,62 @@
+[
+  [
+    "CP01",
+    "RF01, RNF01",
+    "Usar credenciales inválidas; invocar entrega desde sesión estudiante.",
+    "Sin sesión ni mutaciones; entrega denegada por rol."
+  ],
+  [
+    "CP02",
+    "RF02, RNF02",
+    "Buscar título o autor con copias en los tres estados. Repetir bajo la carga de RNF02.",
+    "Resultados correctos; solo DISPONIBLE es reservable; p95 ≤ 2 s."
+  ],
+  [
+    "CP03",
+    "RF03, RNF02, RNF04",
+    "Usuario ACTIVO con total 2 reserva una copia libre; repetir en escenario de carga.",
+    "Una Reserva ACTIVA, total 3, copia RESERVADO, código y venceEn; auditoría y p95 ≤ 2 s."
+  ],
+  [
+    "CP04",
+    "RF03, RNF03",
+    "20 usuarios elegibles compiten por el mismo ejemplar.",
+    "Exactamente una reserva confirma; 19 reciben conflicto; sin asignación duplicada."
+  ],
+  [
+    "CP05",
+    "RF03, RN01",
+    "Usuario con total 3 intenta reservar; luego dos solicitudes del mismo usuario con total 2 compiten por copias distintas.",
+    "Rechazo en el primer caso; solo una confirma en el segundo. Total final ≤ 3."
+  ],
+  [
+    "CP06",
+    "RF04, RNF01, RNF04",
+    "Bibliotecario entrega reserva antes de venceEn; repetir entrega y probar después del plazo.",
+    "Una entrega: Reserva ATENDIDA, Prestamo ACTIVO, copia PRESTADO; repetición sin duplicado y fuera de plazo rechazada."
+  ],
+  [
+    "CP07",
+    "RF05, RNF03, RNF04",
+    "Bibliotecario devuelve un préstamo activo y repite la solicitud.",
+    "Prestamo DEVUELTO con fechaRetorno, copia DISPONIBLE, una devolución efectiva y auditoría coherente."
+  ],
+  [
+    "CP08",
+    "RF06, RNF01, RNF04",
+    "Titular cancela antes del plazo; no titular intenta cancelar otra reserva; temporizador ejecuta al vencer.",
+    "Solo titular cancela; vencimiento desde el plazo; estado terminal correcto y copia libre."
+  ],
+  [
+    "CP09",
+    "RF03, RNF03",
+    "Repetir solicitudId después de perder respuesta; inyectar fallo antes del commit en otro intento.",
+    "Reintento devuelve la misma reserva. Fallo previo al commit deja cero cambios parciales."
+  ],
+  [
+    "CP10",
+    "RF04, RF06, RNF03",
+    "Entrega y cancelación compiten antes del plazo; entrega y vencimiento compiten exactamente en venceEn.",
+    "Primera carrera: una transición válida gana. En el límite solo VENCIDA; nunca se libera un ejemplar prestado."
+  ]
+]
