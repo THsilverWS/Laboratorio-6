@@ -1,0 +1,74 @@
+{
+  ".gitignore": {
+    "bytes": 27,
+    "sha256": "46d271d398fbed51be8c1dacb49bf58605027c72a3c6494b48ddb18e06057dee"
+  },
+  "entrega/Tema6.docx": {
+    "bytes": 311114,
+    "sha256": "e822479ba7b5eb08351420bc7451b840ff701d1403f13f888d6234e9d7ba80f8"
+  },
+  "entrega/Tema6.pdf": {
+    "bytes": 670198,
+    "sha256": "2132e38e019b4b1e30246c06677ac1b5a6cb877ab918c676ab8db2e7a7018961"
+  },
+  "iteraciones/iter1/evidencias/trazabilidad.json": {
+    "bytes": 1053,
+    "sha256": "c248e5f43d1680acb9f5d19faa6338d96092e3c3764b0fcc40dc50c3e4f8d631"
+  },
+  "iteraciones/iter1/modelos/ACT01.png": {
+    "bytes": 83831,
+    "sha256": "5b413225af988258a885734d6bb3b33a8796f4dd1eb64342c85529822fcaffa6"
+  },
+  "iteraciones/iter1/modelos/ACT01.puml": {
+    "bytes": 582,
+    "sha256": "81140e42ce7a4d33688434648bb381fe7d32308327e1f9f7434a743b01f8ec5b"
+  },
+  "iteraciones/iter1/modelos/CLA01.png": {
+    "bytes": 58195,
+    "sha256": "fa8c466b1bc75ce586a0300f190d41e0823da0703b103eaf66bd79c74aa8dbf9"
+  },
+  "iteraciones/iter1/modelos/CLA01.puml": {
+    "bytes": 832,
+    "sha256": "eed870808132c806dbb8b756a77311a180e25b3bd1387848ea86431b34d1d221"
+  },
+  "iteraciones/iter1/modelos/EST01.png": {
+    "bytes": 57359,
+    "sha256": "86eea7a4229cc955f9e35fa494624acc580569d47c196918b694f5e9e6ca3376"
+  },
+  "iteraciones/iter1/modelos/EST01.puml": {
+    "bytes": 591,
+    "sha256": "60246d9ba1db3bd82acb4080fcdff20b025ae93f0bfbc8642fb5b3134d5e9912"
+  },
+  "iteraciones/iter1/modelos/SEQ01.png": {
+    "bytes": 95180,
+    "sha256": "59eba178979b91aa09092191f8be6bac4d9679b49fc03965fc52e234f1e48bee"
+  },
+  "iteraciones/iter1/modelos/SEQ01.puml": {
+    "bytes": 1098,
+    "sha256": "b54c8d0fb03518b387bd7fdf891407ab503b1cbe5345e620099d5dbf2fb3bed3"
+  },
+  "iteraciones/iter1/pruebas/aceptacion.json": {
+    "bytes": 3028,
+    "sha256": "4de935a74ac483c65833d6809db880cdc14517310b0789767fd6a630e23f9db2"
+  },
+  "iteraciones/iter1/requisitos/plan_iter1.md": {
+    "bytes": 21282,
+    "sha256": "66b16b5c5849f8bc12e095a229376ce8105772b05967bbc288b72b2280727f4c"
+  },
+  "iteraciones/iter1/requisitos/vision_srs.md": {
+    "bytes": 5212,
+    "sha256": "ed4d39b5dfdc47bebb143d9048b9d87a6ab6bef119a5e4b76b399eae3c40d081"
+  },
+  "iteraciones/iter1/revision/checklist.json": {
+    "bytes": 2593,
+    "sha256": "45f0e3817fbab6d2bcdaf6417d2c8583fce72bf1c0b24a5b707ff8771f3898a3"
+  },
+  "iteraciones/iter1/revision/revision_simulada.md": {
+    "bytes": 630,
+    "sha256": "d29e71d7436b7bd1e825448ae43fa6229b7a0212a8562b43ab1d99d3d3ba88c0"
+  },
+  "README.md": {
+    "bytes": 1464,
+    "sha256": "87f7de99c099aa309186c05f00f42f1d1923a8744a70ff8cda2c59b874061eec"
+  }
+}
