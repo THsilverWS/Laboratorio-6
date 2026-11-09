@@ -58,5 +58,17 @@
     "RF04, RF06, RNF03",
     "Entrega y cancelación compiten antes del plazo; entrega y vencimiento compiten exactamente en venceEn.",
     "Primera carrera: una transición válida gana. En el límite solo VENCIDA; nunca se libera un ejemplar prestado."
+  ],
+  [
+    "CP11",
+    "RNF01",
+    "Acceder al inicio de sesión y a la reserva mediante HTTPS; revisar HTTP, certificado y transporte de credenciales.",
+    "Certificado válido; las credenciales solo se envían por HTTPS. HTTP redirige antes de autenticar o rechaza la operación."
+  ],
+  [
+    "CP12",
+    "RNF01",
+    "Crear dos cuentas con la misma contraseña en un entorno de pruebas autorizado; inspeccionar el almacenamiento y el verificador.",
+    "No hay contraseñas legibles ni reversibles. Se usa hash adaptativo con sal por contraseña; los valores almacenados difieren y la autenticación funciona."
   ]
 ]

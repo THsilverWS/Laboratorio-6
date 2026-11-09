@@ -1,17 +1,12 @@
 3 Casos de uso y excepciones
 
 | ID | Caso de uso | Actor principal | Requisito |
-
+| --- | --- | --- | --- |
 | CU01 | Iniciar sesión | Estudiante o bibliotecario | RF01 |
-
 | CU02 | Consultar catálogo | Estudiante | RF02 |
-
 | CU03 | Reservar ejemplar | Estudiante | RF03 |
-
 | CU04 | Entregar ejemplar | Bibliotecario | RF04 |
-
 | CU05 | Registrar devolución | Bibliotecario | RF05 |
-
 | CU06 | Cerrar reserva | Estudiante o temporizador | RF06 |
 
 CU03 Reservar ejemplar
@@ -39,17 +34,12 @@ CU06. Cancelar exige titularidad y vigencia; el temporizador vence desde venceEn
 Horizonte propuesto de seis semanas, con una iteración de una semana. Los roles se asignan a integrantes al iniciar el proyecto: AN analista, AR arquitecto, DE desarrollador, QA responsable de pruebas y LP líder del proyecto. Una persona puede cubrir varios roles; la revisión por pares debe realizarla otra persona.
 
 | Fase e iteración | Entregables y responsable | Criterio de salida y riesgo tratado |
-
+| --- | --- | --- |
 | InicioI1 · semana 1 | Visión v1, SRS v1, roadmap, CU y modelos preliminares. AN y LP. Línea base v1.0-iter1. | Alcance delimitado, IDs enlazados y revisión interna cerrada. K01: reglas sin validar; obtener acuerdo de biblioteca. |
-
 | ElaboraciónI2 · semana 2 | Arquitectura web y BD; prototipo de reserva y modelos refinados. AR y DE. | Prueba ejecutable de competencia e idempotencia. Hito LCA: arquitectura viable. K02: doble asignación; bloqueo y restricción de unicidad. |
-
 | ConstrucciónI3 · semana 3 | CU01 a CU03 implementados; auditoría de reserva; pruebas unitarias e integración. DE y QA. | Sesión, catálogo y reserva satisfacen CP01 a CP05 y CP09. K03: control de acceso; pruebas por rol. |
-
 | ConstrucciónI4 · semana 4 | CU04 a CU06; tarea de vencimiento; actualización de UML y manual breve. DE y QA. | CP06 a CP08 y CP10 correctos. K04: carreras entre entrega y cierre; transición condicional atómica. |
-
 | ConstrucciónI5 · semana 5 | Regresión, carga, auditoría y correcciones. DE y QA. | RNF01 a RNF04 verificados; sin defectos críticos. Hito IOC: producto listo para piloto. K05: lentitud; medir e indexar. |
-
 | TransiciónI6 · semana 6 | Piloto, capacitación, respaldo, restauración y acta de aceptación. LP, QA y biblioteca. | Usuarios completan consulta, reserva y devolución; acta firmada y plan de soporte. Hito PR: liberación aceptada. K06: adopción; práctica guiada. |
 
 Hito de inicio LCO. Se alcanza al acordar objetivos, alcance y viabilidad. La línea base documental de I1 permite revisar ese acuerdo; no equivale por sí sola a la aceptación del responsable de biblioteca. LCA, IOC y PR son puertas de decisión de las fases siguientes.
@@ -57,17 +47,12 @@ Hito de inicio LCO. Se alcanza al acordar objetivos, alcance y viabilidad. La l�
 Acciones de mitigación y seguimiento
 
 | Riesgo | Probabilidad e impacto | Acción verificable |
-
+| --- | --- | --- |
 | K01 | Media / alto | AN valida cupo y plazos en I1; conserva el acuerdo. |
-
 | K02 | Alta / alto | AR demuestra en I2 que 20 competidores producen una sola reserva. |
-
 | K03 | Media / alto | QA verifica rechazo de acciones de bibliotecario desde cuenta estudiante en I3. |
-
 | K04 | Media / alto | QA prueba en I4 la carrera entrega–vencimiento: una sola transición gana. |
-
 | K05 | Media / medio | QA mide p95 en I5; DE ajusta índices y repite la medición. |
-
 | K06 | Media / medio | LP realiza piloto y confirma restauración en I6. |
 
 5 Matriz fase y artefactos
@@ -75,21 +60,14 @@ Acciones de mitigación y seguimiento
 RUP organiza el ciclo en cuatro fases [2]. Las disciplinas se repiten con distinta intensidad: el análisis, diseño, pruebas y gestión de cambios continúan en cada iteración. Los modelos de esta entrega son una anticipación de diseño para revisar riesgos; se consolidan en elaboración.
 
 | Artefacto | Inicio I1 | Elaboración I2 | Construcción I3 a I5 | Transición I6 |
-
+| --- | --- | --- | --- | --- |
 | Visión y SRS | v1 del alcance y requisitos | Acordar reglas y prioridades | Controlar cambios y actualizar criterios | Comprobar alcance aceptado |
-
 | Casos de uso | CU01 a CU06; detalle de CU03 | Refinar contratos y alternativas | Actualizar según integración | Validar escenarios con usuarios |
-
 | ACT01 actividad | Flujo crítico y excepciones | Precisar transacción y concurrencia | Alinear con comportamiento real | Usar en capacitación |
-
 | SEQ01 secuencia | Interacciones preliminares de CU03 | Fijar interfaces y acceso a BD | Actualizar con servicios reales | Verificar operación y soporte |
-
 | CLA01 clases | Modelo del dominio | Precisar restricciones y esquema | Alinear entidades y persistencia | Mantener glosario final |
-
 | EST01 estados | Ciclo de vida de Reserva | Validar guardas y exclusión | Probar eventos y carreras | Confirmar estados operativos |
-
-| Trazabilidad y pruebas | Matriz y CP01 a CP10 diseñados | Prueba del riesgo K02 | Resultados reales y regresión | Aceptación del piloto |
-
+| Trazabilidad y pruebas | Matriz y CP01 a CP12 diseñados | Prueba del riesgo K02 | Resultados reales y regresión | Aceptación del piloto |
 | Configuración y revisión | Fuentes, revisión interna y tag local | Nueva línea base técnica | Versionar cada incremento | Versión aceptada y manuales |
 
 Coherencia de vocabulario
@@ -97,13 +75,10 @@ Coherencia de vocabulario
 Libro es el título bibliográfico; Ejemplar es la unidad física que se asigna. Reserva representa el derecho temporal de retiro; Prestamo representa la salida física. La disponibilidad pertenece a Ejemplar y se deriva de sus asignaciones vigentes. Esta distinción evita reservar un título sin identificar qué copia se retira.
 
 | Entidad | Estados permitidos |
-
+| --- | --- |
 | Usuario | ACTIVO, BLOQUEADO |
-
 | Ejemplar | DISPONIBLE, RESERVADO, PRESTADO |
-
 | Reserva | ACTIVA, CANCELADA, VENCIDA, ATENDIDA |
-
 | Prestamo | ACTIVO, DEVUELTO |
 
 Notación. Se emplea UML para actividad, secuencia, clases y estados. El catálogo de CU de la sección 3 define los actores y objetivos. La guía admite UML Activity para el proceso crítico; por ello no se necesita duplicarlo en BPMN. La referencia normativa de UML se incluye en [3].
@@ -160,28 +135,19 @@ La devolución pertenece al ciclo de vida de Prestamo, no reactiva la Reserva AT
 
 10 Matriz de trazabilidad
 
-Cada fila enlaza el objetivo de la Visión con el requisito, su caso de uso, los modelos pertinentes y la prueba de aceptación. El signo de diseño cubierto significa que existe especificación; no acredita una ejecución de software.
+Cada fila enlaza el objetivo de la Visión con el requisito, su caso de uso, los modelos pertinentes y la prueba de aceptación. La cobertura indicada corresponde al diseño de los escenarios; la ejecución se planifica para las iteraciones posteriores.
 
 | Objetivo | Requisito | Caso de uso | Evidencia de diseño | Prueba prevista |
-
+| --- | --- | --- | --- | --- |
 | OBJ02 | RF01 | CU01 | Contrato CU01 | CP01 |
-
 | OBJ02 | RF02 | CU02 | CLA01 | CP02 |
-
 | OBJ01 y OBJ02 | RF03 | CU03 | ACT01, SEQ01, CLA01, EST01 | CP03 a CP05, CP09 |
-
 | OBJ01 | RF04 | CU04 | CLA01, EST01 | CP06, CP10 |
-
 | OBJ01 | RF05 | CU05 | CLA01; contrato CU05 | CP07 |
-
 | OBJ01 | RF06 | CU06 | CLA01, EST01 | CP08, CP10 |
-
-| OBJ03 | RNF01 | CU01 a CU06 | Contratos y controles de rol | CP01, CP06 a CP08 |
-
+| OBJ03 | RNF01 | CU01 a CU06 | Contratos y controles de rol | CP01, CP06 a CP08, CP11 y CP12 |
 | OBJ02 | RNF02 | CU02 y CU03 | SEQ01 y escenario de carga | CP02, CP03 con carga |
-
 | OBJ01 | RNF03 | CU03 a CU06 | ACT01, SEQ01, CLA01, EST01 | CP04, CP07 a CP10 |
-
 | OBJ03 | RNF04 | CU03 a CU06 | Registro de auditoría de SRS | CP03, CP06 a CP08 |
 
 Cobertura documental
@@ -199,63 +165,70 @@ Ejemplo de propagación. Si se amplía el plazo de reserva a 48 horas, se actual
 Los casos siguientes son diseños de prueba para las iteraciones de construcción. Sus resultados esperados se derivan de la SRS; no se presentan como mediciones ni pruebas ejecutadas sobre una aplicación implementada.
 
 | ID | Vínculo | Estímulo | Resultado esperado |
-
+| --- | --- | --- | --- |
 | CP01 | RF01, RNF01 | Usar credenciales inválidas; invocar entrega desde sesión estudiante. | Sin sesión ni mutaciones; entrega denegada por rol. |
-
 | CP02 | RF02, RNF02 | Buscar título o autor con copias en los tres estados. Repetir bajo la carga de RNF02. | Resultados correctos; solo DISPONIBLE es reservable; p95 ≤ 2 s. |
-
 | CP03 | RF03, RNF02, RNF04 | Usuario ACTIVO con total 2 reserva una copia libre; repetir en escenario de carga. | Una Reserva ACTIVA, total 3, copia RESERVADO, código y venceEn; auditoría y p95 ≤ 2 s. |
-
 | CP04 | RF03, RNF03 | 20 usuarios elegibles compiten por el mismo ejemplar. | Exactamente una reserva confirma; 19 reciben conflicto; sin asignación duplicada. |
-
 | CP05 | RF03, RN01 | Usuario con total 3 intenta reservar; luego dos solicitudes del mismo usuario con total 2 compiten por copias distintas. | Rechazo en el primer caso; solo una confirma en el segundo. Total final ≤ 3. |
-
 | CP06 | RF04, RNF01, RNF04 | Bibliotecario entrega reserva antes de venceEn; repetir entrega y probar después del plazo. | Una entrega: Reserva ATENDIDA, Prestamo ACTIVO, copia PRESTADO; repetición sin duplicado y fuera de plazo rechazada. |
-
 | CP07 | RF05, RNF03, RNF04 | Bibliotecario devuelve un préstamo activo y repite la solicitud. | Prestamo DEVUELTO con fechaRetorno, copia DISPONIBLE, una devolución efectiva y auditoría coherente. |
-
 | CP08 | RF06, RNF01, RNF04 | Titular cancela antes del plazo; no titular intenta cancelar otra reserva; temporizador ejecuta al vencer. | Solo titular cancela; vencimiento desde el plazo; estado terminal correcto y copia libre. |
-
 | CP09 | RF03, RNF03 | Repetir solicitudId después de perder respuesta; inyectar fallo antes del commit en otro intento. | Reintento devuelve la misma reserva. Fallo previo al commit deja cero cambios parciales. |
-
 | CP10 | RF04, RF06, RNF03 | Entrega y cancelación compiten antes del plazo; entrega y vencimiento compiten exactamente en venceEn. | Primera carrera: una transición válida gana. En el límite solo VENCIDA; nunca se libera un ejemplar prestado. |
 
 Evidencia requerida al ejecutar. Registrar versión, datos de entrada, hora del servidor, resultado observado, estado de BD y veredicto. Para carga, adjuntar percentiles y tasa de errores; para concurrencia, contar asignaciones activas después de cada corrida.
 
-12 Revisión de coherencia y hallazgos
+11 Escenarios adicionales de seguridad
 
-Se realizó una revisión interna de los contratos y diagramas de esta línea base. La revisión independiente por un compañero debe usar el mismo checklist, registrar su identidad y aportar conformidad o nuevos hallazgos antes de la entrega académica.
+CP11 y CP12 completan RNF01. Son escenarios diseñados para construcción y transición; no se presentan como pruebas ejecutadas sobre una aplicación.
+
+| ID | Vínculo | Estímulo | Resultado esperado |
+| --- | --- | --- | --- |
+| CP11 | RNF01 | Acceder al inicio de sesión y a la reserva mediante HTTPS; revisar HTTP, certificado y transporte de credenciales. | Certificado válido; las credenciales solo se envían por HTTPS. HTTP redirige antes de autenticar o rechaza la operación. |
+| CP12 | RNF01 | Crear dos cuentas con la misma contraseña en un entorno de pruebas autorizado; inspeccionar el almacenamiento y el verificador. | No hay contraseñas legibles ni reversibles. Se usa hash adaptativo con sal por contraseña; los valores almacenados difieren y la autenticación funciona. |
+
+Criterios para registrar la ejecución
+
+CP11. Registrar el entorno, la versión evaluada, el resultado de la validación del certificado y el comportamiento de acceso mediante HTTP. Comprobar que ninguna solicitud con contraseña se envía por un canal sin cifrar. Conservar evidencias sin contraseñas, tokens ni información personal.
+
+CP12. Utilizar exclusivamente cuentas y datos de prueba. Documentar el método de almacenamiento y verificar la sal individual y el uso de hash adaptativo mediante configuración y revisión del componente de autenticación. Que dos valores difieran es una comprobación complementaria y no demuestra por sí sola el uso de un mecanismo seguro.
+
+Hallazgo adicional y corrección
+
+H06. La primera matriz enlazaba RNF01 con comprobaciones de rol, pero no definía escenarios propios para HTTPS y almacenamiento protegido de contraseñas. Se agregaron CP11 y CP12 y se actualizó la trazabilidad. Estado: corrección documental incorporada; ejecución prevista en I5.
+
+Ejercicio de revisión por pares simulado
+
+Nombre asignado al revisor simulado: JHON ALBERTO JUAREZ GARRIDO.
+
+Comentario simulado: precisar cómo se verifican el cifrado del acceso y la protección de contraseñas, además de los permisos por rol. Respuesta del equipo: ampliar el plan con CP11 y CP12 y enlazar ambos escenarios con RNF01. La corrección puede verificarse en esta sección y en la matriz de trazabilidad.
+
+El nombre identifica un personaje del ejercicio solicitado. No existe constancia de que esta persona haya revisado, firmado o aprobado los documentos.
+
+12 Revisión interna y revisión por pares simulada
+
+Se realizó una revisión interna de los contratos y diagramas. Se añade un ejercicio de revisión por pares simulado con el nombre JHON ALBERTO JUAREZ GARRIDO. Los comentarios del ejercicio se incorporan al registro de hallazgos; no se atribuye a esta persona una participación o aprobación real.
 
 | Control | Comprobación | Resultado |
-
+| --- | --- | --- |
 | Alcance | Las seis funciones pertenecen a la Visión y excluyen pagos. | Conforme |
-
 | Nombres | Libro, Ejemplar, Reserva y Prestamo mantienen el mismo significado. | Conforme |
-
 | Relaciones | Cada reserva y préstamo identifica usuario y ejemplar. | Conforme |
-
 | Excepciones | Rechazo, conflicto, rollback y reintento tienen respuesta definida. | Conforme |
-
 | Estados | Guardas de entrega, cancelación y vencimiento son excluyentes. | Conforme |
-
 | Trazabilidad | 6 RF y 4 RNF se enlazan con CU y escenarios. | Conforme |
-
 | Riesgos | K01 a K06 tienen fase, responsable y acción. | Conforme |
-
-| Revisión por pares | Identidad, fecha y aprobación de otra persona. | Pendiente externo |
+| Revisión simulada | Ejercicio asignado a JHON ALBERTO JUAREZ GARRIDO; sin aprobación humana. | Simulada |
 
 Registro de hallazgos y correcciones
 
 | ID | Brecha detectada | Corrección incorporada | Estado |
-
+| --- | --- | --- | --- |
 | H01 | Reservar Libro no identifica la copia asignada. | RF03 y CLA01 reservan Ejemplar, con vínculo a Libro. | Cerrado en diseño |
-
 | H02 | Cancelar sin comprobar el estado puede liberar una copia prestada. | CU06 y EST01 solo cambian desde ACTIVA mediante transición atómica. | Cerrado en diseño |
-
 | H03 | Validar el cupo solo antes de la transacción permite superar 3. | CU03 bloquea usuario y revalida cupo antes de crear. | Cerrado en diseño |
-
 | H04 | Un reintento tras respuesta perdida puede crear otra reserva. | RN05 y SEQ01 usan solicitudId único y recuperan el resultado. | Cerrado en diseño |
-
 | H05 | El límite del plazo puede permitir dos eventos incompatibles. | RN02 fija < para entrega y ≥ para vencimiento. | Cerrado en diseño |
 
-Cerrado en diseño indica que el contrato fue corregido y contrastado con los modelos. La eficacia de la corrección requiere las pruebas ejecutables de I2 a I5. Revisor par: ____________________  Fecha: __________  Firma o conformidad: ____________________.
+Cerrado en diseño indica que el contrato fue corregido y contrastado con los modelos. La revisión simulada no constituye la aprobación de una persona ni reemplaza una revisión independiente real.

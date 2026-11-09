@@ -1,5 +1,5 @@
 {
-  "tipo": "revision interna documental",
+  "tipo": "revision interna documental y ejercicio de revision por pares simulado",
   "checklist": [
     [
       "Alcance",
@@ -72,6 +72,19 @@
       "El límite del plazo puede permitir dos eventos incompatibles.",
       "RN02 fija < para entrega y ≥ para vencimiento.",
       "Cerrado en diseño"
+    ],
+    [
+      "H06",
+      "Faltaban escenarios específicos de HTTPS y hash.",
+      "Se agregaron CP11 y CP12 y se actualizó RNF01.",
+      "Corregido en diseño; ejecución futura"
     ]
-  ]
+  ],
+  "revision_simulada": {
+    "nombre_asignado": "JHON ALBERTO JUAREZ GARRIDO",
+    "tipo": "simulada",
+    "participacion_humana_acreditada": false,
+    "comentario": "Precisar verificación de HTTPS y hash de contraseñas.",
+    "respuesta": "Agregar CP11 y CP12 y actualizar la trazabilidad."
+  }
 }
